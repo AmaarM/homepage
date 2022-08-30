@@ -1,17 +1,19 @@
 import type { NextPage } from "next";
 import Layout from "../components/layouts/main";
+import Section from "../components/layouts/section";
+import About from "../components/About";
+import Hero from "../components/Hero";
 
 const Home: NextPage = () => {
   return (
     <>
       <Layout>
-        <div className="w-screen text-skin-base flex justify-center my-10 ease-in-out duration-300">
-          <p>
-            Hello, My name is Amaar Mohamed and I&#39;m an aspiring Software
-            Engineer. I&#39;m currently studying Computer Science at the
-            University of Minnesota
-          </p>
-        </div>
+        <Section>
+          <Hero /> 
+        </Section>
+        <Section>
+          <About />
+        </Section>
         <h1 className="text-2xl text-skin-base text-center">Course Work</h1>
         <div className="w-[800px] my-5 flex justify-center mx-auto text-skin-base">
           <div>
