@@ -1,9 +1,11 @@
 import Link from "next/link";
+import Globe from "../components/Globe";
 
 const Navbar = () => {
   return (
     <div className="fade-in animation-delay-3 flex flex-row justify-evenly w-screen align-middle sticky top-0 left-0 z-[60]">
       <div className="flex flex-row my-5 justify-between w-[500px]">
+        <Globe />
         <Link href="#about">
           <h4 className="text-skin-base cursor-pointer hover:opacity-80 text-2xl">
             About

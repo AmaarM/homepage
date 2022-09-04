@@ -5,6 +5,7 @@ import About from "../components/About";
 import Hero from "../components/Hero";
 import Projects from "../components/Projects";
 import { Molecules } from "../components/Molecules";
+import Contact from "../components/Contact";
 
 const Home: NextPage = () => {
   return (
@@ -16,6 +17,9 @@ const Home: NextPage = () => {
         </Section>
         <Section>
           <Projects />
+        </Section>
+        <Section>
+          <Contact />
         </Section>
       </Layout>
       <Molecules />
