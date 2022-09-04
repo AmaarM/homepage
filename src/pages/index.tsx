@@ -3,18 +3,22 @@ import Layout from "../components/layouts/main";
 import Section from "../components/layouts/section";
 import About from "../components/About";
 import Hero from "../components/Hero";
+import Projects from "../components/Projects";
+import { Molecules } from "../components/Molecules";
 
 const Home: NextPage = () => {
   return (
     <>
       <Layout>
-        <Section>
-          <Hero />
-        </Section>
+        <Hero />
         <Section>
           <About />
         </Section>
+        <Section>
+          <Projects />
+        </Section>
       </Layout>
+      <Molecules />
     </>
   );
 };

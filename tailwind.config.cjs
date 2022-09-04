@@ -11,8 +11,10 @@ module.exports = {
       },
       textColor: {
         skin: {
-          base: "#ffffff",
+          base: "#D1D5DB",
           inverted: "#000000",
+          neon: "#073642",
+          gray: "#333333",
         },
       },
     },
