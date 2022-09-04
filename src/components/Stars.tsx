@@ -103,7 +103,7 @@ const Stars = (props: any) => {
       <Points
         ref={ref}
         positions={sphere}
-        stride={5}
+        stride={3}
         frustumCulled={false}
         {...props}
       >
