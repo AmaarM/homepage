@@ -3,8 +3,16 @@ import Globe from "../components/Globe";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { AsciiEffect } from "three-stdlib";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
+  const [y, setY] = useState(0);
+  const [showNav, setShowNav] = useState(false);
+  addEventListener("scroll", (e) => {
+    setY(window.scrollY);
+  });
+
+  useEffect(() => {}, []);
   return (
     <div className="fade-in animation-delay-3 flex flex-row justify-evenly w-screen align-middle sticky top-0 left-0 z-[60]">
       <Link href="#top">

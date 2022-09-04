@@ -18,6 +18,9 @@ const Main: React.FC<children> = ({ children }) => {
         <link rel="icon" href="/favicon-16x16.png" />
       </Head>
       <div id="top" className="absolute w-screen h-screen top-0">
+        <h1 className="text-sm text-skin-base my-[60px] mx-[119px] absolute z-[100]">
+          Welcome
+        </h1>
         <Canvas camera={{ position: [0, 0, 1] }}>
           <Stars />
         </Canvas>

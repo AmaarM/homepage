@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ProfilePic from "../assets/amaar-pic.jpg";
+
 const About = () => {
   return (
     <div
