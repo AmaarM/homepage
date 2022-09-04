@@ -22,7 +22,6 @@ const Home: NextPage = () => {
           <Contact />
         </Section>
       </Layout>
-      <Molecules />
     </>
   );
 };

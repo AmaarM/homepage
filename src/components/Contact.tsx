@@ -5,7 +5,6 @@ const Contact = () => {
   const handleOnChange: ChangeEventHandler = (e: any) => {
     setValue(e?.target?.value);
   };
-  console.log(value);
   return (
     <div>
       <h1>Contact</h1>
