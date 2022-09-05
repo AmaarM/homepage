@@ -1,7 +1,4 @@
 import Link from "next/link";
-import Globe from "../components/Globe";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
 import { useEffect, useState } from "react";
 import { FcCollapse } from "react-icons/fc";
 
@@ -39,7 +36,7 @@ const Navbar = () => {
         className={
           showNav
             ? "flex flex-col my-5 justify-between w-screen min-w-[350px] items-end mx-10 fade-in animation-delay-4"
-            : "flex flex-row my-5 justify-between max-w-[500px] min-w-[350px]"
+            : "flex flex-row my-5 justify-between max-w-[500px] min-w-[400px]"
         }
       >
         <Link href="#about">
@@ -57,9 +54,9 @@ const Navbar = () => {
             Experience
           </h4>
         </Link>
-        <Link href="https://github.com/AmaarM">
+        <Link href="#contact">
           <h4 className="text-skin-base cursor-pointer hover:opacity-80 text-xl">
-            Source
+            Contact
           </h4>
         </Link>
       </div>

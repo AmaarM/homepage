@@ -6,11 +6,22 @@ const Contact = () => {
     setValue(e?.target?.value);
   };
   return (
-    <div>
-      <h1>Contact</h1>
-      <form>
-        <input type="text" value={value} onChange={handleOnChange} />
-      </form>
+    <div
+      id="contact"
+      className="w-screen flex flex-col justify-evenly items-center"
+    >
+      <h1 className="text-skin-base text-4xl">Contact</h1>
+      <div className="my-10">
+        <form>
+          <input
+            type="text"
+            value={value}
+            placeholder="Email"
+            onChange={handleOnChange}
+            className="px-3 rounded-md py-1"
+          />
+        </form>
+      </div>
     </div>
   );
 };
