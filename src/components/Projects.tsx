@@ -23,8 +23,8 @@ const Projects = () => {
 
   return (
     <div id="projects" className="text-skin-base mx-auto">
-      <h1 className="text-skin-base text-4xl text-center">Projects</h1>
-      <div className="flex flex-row flex-wrap justify-evenly my-5">
+      <h1 className="text-skin-base text-4xl text-center mt-10">Projects</h1>
+      <div className="flex flex-row flex-wrap justify-evenly">
         <ProjectSection
           imageUrl={FloraFaunaPic}
           title={"Flora&Fauna"}
@@ -47,16 +47,16 @@ const Projects = () => {
 };
 
 export const ProjectSection = (props: projectData) => {
-  const { Node, React, SQL, Express } = props.techStack;
+  const { Node, React, SQL, Express } = props.techStack<any>;
   return (
-    <div className="w-[300px] text-left">
+    <div className="w-[300px] text-left my-10">
       <div className="flex flex-row justify-between">
         <h1 className="text-xl">{props.title}</h1>
         <div className="flex flex-row justify-evenly w-[100px]">
           <Node />
           <React />
           <SQL />
-          <Express /> 
+          <Express />
         </div>
       </div>
       <img

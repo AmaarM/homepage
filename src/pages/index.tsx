@@ -4,8 +4,8 @@ import Section from "../components/layouts/section";
 import About from "../components/About";
 import Hero from "../components/Hero";
 import Projects from "../components/Projects";
-import { Molecules } from "../components/Molecules";
 import Contact from "../components/Contact";
+import Experience from "../components/Experience";
 
 const Home: NextPage = () => {
   return (
@@ -17,6 +17,9 @@ const Home: NextPage = () => {
         </Section>
         <Section>
           <Projects />
+        </Section>
+        <Section>
+          <Experience />
         </Section>
         <Section>
           <Contact />

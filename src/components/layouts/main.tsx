@@ -4,12 +4,17 @@ import Footer from "../Footer";
 import Head from "next/head";
 import Stars from "../Stars";
 import { Canvas } from "@react-three/fiber";
-
+import { useState, useEffect } from "react";
 type children = {
   children?: React.ReactNode;
 };
 
 const Main: React.FC<children> = ({ children }) => {
+  const [showWelcome, setShowWelcome] = useState(false);
+  useEffect(() => {
+    setShowWelcome(window.innerWidth > 600 ? true : false);
+  }, []);
+
   return (
     <div>
       <Head>
@@ -18,9 +23,6 @@ const Main: React.FC<children> = ({ children }) => {
         <link rel="icon" href="/favicon-16x16.png" />
       </Head>
       <div id="top" className="absolute w-screen h-screen top-0">
-        <h1 className="text-sm text-skin-base my-[60px] mx-[119px] absolute z-[100]">
-          Welcome
-        </h1>
         <Canvas camera={{ position: [0, 0, 1] }}>
           <Stars />
         </Canvas>
