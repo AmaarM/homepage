@@ -4,12 +4,10 @@ import { FcCollapse } from "react-icons/fc";
 
 const Navbar = () => {
   const [showNav, setShowNav] = useState(false);
-  const [showGlobe, setShowGlobe] = useState(false);
 
   useEffect(() => {
     addEventListener("scroll", () => {
       setShowNav(window.scrollY > 500 ? true : false);
-      setShowGlobe(window.innerWidth > 600 ? true : false);
     });
   }, []);
 

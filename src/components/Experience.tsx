@@ -2,8 +2,10 @@ import Image from "next/image";
 import { StaticImageData } from "next/image";
 import TargetLogo from "../assets/target-logo.jpg";
 import CodepathLogo from "../assets/codepath-logo.jpg";
+import { useState } from "react";
 
 type workSection = {
+  company: string;
   title: string;
   desc: string;
   timeFrame: string;
@@ -13,17 +15,23 @@ type workSection = {
 const Experience = () => {
   return (
     <div id="experience" className="flex flex-col justify-center items-center">
-      <h1 className="text-4xl text-skin-base">Work Experience</h1>
+      <h1 className="text-4xl text-skin-base text-center">Work Experience</h1>
       <div className="flex flex-row flex-wrap justify-evenly w-screen">
         <WorkSection
-          title={"Target"}
-          desc={"Guest Advocate"}
+          company={"Target"}
+          title={"Guest Advocate"}
+          desc={
+            "Assisted Guests with any questions they may have, and resolve issues"
+          }
           timeFrame={"11-2018 -> 06-2022"}
           image={TargetLogo}
         />
         <WorkSection
-          title={"Codepath x Schmidt Futures"}
-          desc={"Full Stack Intern"}
+          company={"CodePath x Schmidt Futures"}
+          title={"Full Stack Intern"}
+          desc={
+            "Built Responsive Websites using Javascript Technologies like React, Node, Express and more"
+          }
           timeFrame={"06-2022 -> 08-2022"}
           image={CodepathLogo}
         />
@@ -32,9 +40,21 @@ const Experience = () => {
   );
 };
 
-const WorkSection = ({ title, desc, timeFrame, image }: workSection) => {
+const WorkSection = ({
+  title,
+  desc,
+  timeFrame,
+  image,
+  company,
+}: workSection) => {
+  const [moreInfo, setMoreInfo] = useState(false);
+
+  const handleOnClick = () => {
+    setMoreInfo(!moreInfo);
+  };
+
   return (
-    <div className="text-skin-base w-[500px] my-10 flex flex-row justify-evenly">
+    <div className="text-skin-base w-[500px] my-10 flex flex-row justify-center">
       <div>
         <Image
           src={image}
@@ -43,9 +63,12 @@ const WorkSection = ({ title, desc, timeFrame, image }: workSection) => {
           height={300}
           className="object-cover rounded-lg"
         />
-        <h1 className="text-2xl max-w-[450px]">{title}</h1>
-        <h1 className="text-xl">{desc}</h1>
-        <p className="text-lg">{timeFrame}</p>
+        <h1 className="text-2xl max-w-[450px] my-1">{company}</h1>
+        <h1 className="text-2xl max-w-[450px] my-1">{title}</h1>
+        <h1 className="text-xl my-1">{timeFrame}</h1>
+        <h1 className="text-sm text-center my-5 cursor-pointer hover:text-skin-gray" onClick={handleOnClick}>
+          More Info
+        </h1>
       </div>
     </div>
   );
