@@ -3,6 +3,7 @@ import LifeTrackerPic from "../assets/lifetracker.png";
 import FloraFaunaPic from "../assets/flora-fauna.png";
 import FlixsterPic from "../assets/flixster.png";
 import Link from "next/link";
+import Image from "next/image";
 import {
   DiPostgresql,
   DiReact,
@@ -105,16 +106,18 @@ export const ProjectSection = (props: projectData) => {
       <div className="flex flex-row justify-between">
         <h1 className="text-xl">{props.title}</h1>
         <div className="flex flex-row justify-evenly w-[100px]">
-          {usedStack.map((Key:Function, idx) => {
+          {usedStack.map((Key: Function, idx) => {
             return <Key key={idx} />;
           })}
         </div>
       </div>
-      <img
-        src={imageUrl.src}
+      <Image
+        src={props.imageUrl.src}
+        width={400}
+        height={200}
         alt="lifetracker landing page"
         className="rounded-xl"
-      />
+      ></Image>
       <Link href={link}>
         <h1 className="cursor-pointer hover:underline mt-3 text-center">
           Link

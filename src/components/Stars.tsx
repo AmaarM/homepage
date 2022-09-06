@@ -90,6 +90,7 @@ export function inSphere(
 }
 
 const Stars = (props: any) => {
+  console.log(typeof props);
   const ref = useRef();
   const [sphere] = useState(() =>
     inSphere(new Float32Array(5000), { radius: 1.5 })
