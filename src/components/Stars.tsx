@@ -5,8 +5,7 @@ import { TypedArray } from "../components/ctypes";
 
 // Credits @pmndrs/maath https://github.com/pmndrs/maath
 type Sphere = {
-  radius?: number;
-  center?: number[];
+  radius: number;
 };
 
 const defaultSphere = {
@@ -61,10 +60,10 @@ const defaultGen = new Generator(Math.random());
 
 export function inSphere(
   buffer: TypedArray,
-  sphere?: Sphere,
+  sphere: Sphere,
   rng: Generator = defaultGen
 ) {
-  const { radius, center } = {
+  const { radius } = {
     ...defaultSphere,
     ...sphere,
   };
@@ -81,24 +80,27 @@ export function inSphere(
     y = (u * y) / mag;
     z = (u * z) / mag;
 
-    buffer[i] = x * radius + center[0];
-    buffer[i + 1] = y * radius + center[1];
-    buffer[i + 2] = z * radius + center[2];
+    buffer[i] = x * radius;
+    buffer[i + 1] = y * radius;
+    buffer[i + 2] = z * radius;
   }
 
   return buffer;
 }
 
 const Stars = (props: any) => {
-  console.log(typeof props);
-  const ref = useRef();
+  const ref = useRef(null);
   const [sphere] = useState(() =>
     inSphere(new Float32Array(5000), { radius: 1.5 })
   );
-  useFrame((state, delta) => {
-    ref.current.rotation.x -= delta / 10;
-    ref.current.rotation.y -= delta / 15;
-  });
+
+  if (ref != null) {
+    useFrame((state, delta) => {
+      ref.current.rotation.x -= delta / 10;
+      ref.current.rotation.y -= delta / 15;
+    });
+  }
+
   return (
     <group rotation={[0, 0, Math.PI / 4]}>
       <Points
