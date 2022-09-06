@@ -23,7 +23,7 @@ const Experience = () => {
           company={"Target"}
           title={"Guest Advocate"}
           desc={[
-            "- Assisted Guests with any questions they may have, and resolve issues",
+            "- Assisted Guests with any questions they may have, and resolved issues",
           ]}
           timeFrame={"11-2018 -> 06-2022"}
           image={TargetLogo}
