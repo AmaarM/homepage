@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div
       id="about"
-      className="text-skin-base w-screen flex flex-col justify-evenly my-10 ease-in duration-300 items-center"
+      className="text-skin-base md:w-screen flex flex-col justify-evenly my-10 ease-in duration-300 items-center w-[200px] mx-auto"
     >
       <Image
         src={ProfilePic}

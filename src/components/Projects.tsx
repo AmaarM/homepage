@@ -13,6 +13,7 @@ import {
   DiJava,
 } from "react-icons/di";
 import { SiExpress } from "react-icons/si";
+import { useState } from "react";
 
 type projectData = {
   title: string;
@@ -20,6 +21,7 @@ type projectData = {
   link: string;
   desc: string;
   imageUrl: StaticImageData;
+  features: Array<string>;
 };
 
 const Projects = () => {
@@ -28,22 +30,34 @@ const Projects = () => {
       <h1 className="text-skin-base text-2xl md:text-4xl text-center">
         Projects
       </h1>
-      <div className="flex flex-row flex-wrap justify-evenly">
+      <div className="flex flex-row flex-wrap justify-evenly md:w-screen w-[200px] mx-auto">
         <ProjectSection
           imageUrl={FloraFaunaPic}
           title={"Flora&Fauna"}
           techStack={["React", "Node", "SQL", "Express"]}
-          desc={
-            "Website that gives users access to the New York Database for local Flora and Fauna"
-          }
+          desc={"Website that allows users to search for local flora and fauna"}
           link={"https://flora-fauna.surge.sh/"}
+          features={[
+            "- User Authentication, log in and sign up",
+            "- Search the database for local flora and fauna",
+            "- Upload Photos for other users to see",
+            "- Like other users uploads",
+            "- Report inappropriate user posts",
+            "- See Your posted and likes posts",
+            "- Change profile details",
+          ]}
         />
         <ProjectSection
           imageUrl={LifeTrackerPic}
           title={"Life Tracker"}
           techStack={["React", "Node", "SQL", "Express"]}
           link={"https://lifetracker-amaar.surge.sh/"}
-          desc={"Website that allows users to track habits and calories"}
+          desc={"Website that allows users to track exercises and calories"}
+          features={[
+            "- Log in and sign up",
+            "- Centralized dashboard to see logged nutrition and exercises",
+            "- Log exercises and calories eaten",
+          ]}
         />
         <ProjectSection
           title={"Flixster"}
@@ -51,6 +65,11 @@ const Projects = () => {
           link={"https://amaarm.github.io/flixster_starter/"}
           desc={"Website to see the the now playing or trending movies"}
           imageUrl={FlixsterPic}
+          features={[
+            "- Search for movies",
+            "- Sort by now playing and trending movies",
+            "- Request to see more movies",
+          ]}
         />
       </div>
     </div>
@@ -58,7 +77,8 @@ const Projects = () => {
 };
 
 export const ProjectSection = (props: projectData) => {
-  const { techStack, imageUrl, desc, link } = props;
+  const { techStack, imageUrl, desc, link, features } = props;
+  const [moreInfo, setMoreInfo] = useState(false);
 
   const possibleTechs: object = {
     React: DiReact,
@@ -71,14 +91,14 @@ export const ProjectSection = (props: projectData) => {
     Java: DiJava,
   };
 
-  let testStack: Function[];
-  testStack = [];
+  let usedStack: Function[];
+  usedStack = [];
   for (let i = 0; i < techStack.length; i++) {
     const component =
       techStack[i] != undefined
         ? possibleTechs[techStack[i] as keyof typeof possibleTechs]
         : () => {};
-    testStack.push(component);
+    usedStack.push(component);
   }
 
   return (
@@ -86,7 +106,7 @@ export const ProjectSection = (props: projectData) => {
       <div className="flex flex-row justify-between">
         <h1 className="text-xl">{props.title}</h1>
         <div className="flex flex-row justify-evenly w-[100px]">
-          {testStack.map((Key, idx) => {
+          {usedStack.map((Key, idx) => {
             return <Key key={idx} />;
           })}
         </div>
@@ -102,6 +122,19 @@ export const ProjectSection = (props: projectData) => {
         </h1>
       </Link>
       <p className="text-center">{desc}</p>
+      <div className="flex justify-center my-5 align-center">
+        <button
+          className="hover:opacity-20 transition-opacity"
+          onClick={() => setMoreInfo(!moreInfo)}
+        >
+          More Info
+        </button>
+      </div>
+      <div className={moreInfo ? "flex justify-center flex-col" : "hidden"}>
+        {features.map((e, idx) => (
+          <div key={idx}>{e}</div>
+        ))}
+      </div>
     </div>
   );
 };

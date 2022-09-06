@@ -14,7 +14,10 @@ type workSection = {
 
 const Experience = () => {
   return (
-    <div id="experience" className="flex flex-col justify-center items-center">
+    <div
+      id="experience"
+      className="flex flex-col justify-center items-center md:w-screen"
+    >
       <h1 className="text-4xl text-skin-base text-center my-10">
         Work Experience
       </h1>
