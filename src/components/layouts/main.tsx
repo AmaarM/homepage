@@ -23,7 +23,9 @@ const Main: React.FC<children> = ({ children }) => {
         </Canvas>
       </div>
       <Navbar />
-      <main className="h-full mx-auto">{children}</main>
+      <main className="h-full mx-auto flex flex-col md:w-screen space-y-[475px]">
+        {children}
+      </main>
       <Footer notSticky={false} />
     </>
   );

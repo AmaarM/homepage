@@ -33,7 +33,7 @@ const Contact = () => {
   return (
     <div
       id="contact"
-      className="w-screen flex flex-col justify-evenly items-center"
+      className="w-screen flex flex-col justify-evenly items-center mt-[250px]"
     >
       <h1 className="text-skin-base text-4xl my-10">Contact</h1>
       <div className="flex flex-col justify-center my-15 items-center">
@@ -62,10 +62,10 @@ const Contact = () => {
           Submit
         </button>
         <h3 className={sent ? "text-skin-base text-center my-10" : "hidden"}>
-          Thank you for reaching out, I will respond to you request soon.
+          Thank you for reaching out, I will respond to your request soon.
         </h3>
       </div>
-      <div className="bottom-0 absolute"> 
+      <div className="bottom-0 absolute">
         <Footer notSticky={true} />
       </div>
     </div>
