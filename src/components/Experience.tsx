@@ -90,8 +90,8 @@ const WorkSection = ({
         }
       >
         {desc.map((e, idx) => (
-          <div>
-            <h2 key={idx}>{e}</h2>
+          <div key={idx}>
+            <h2>{e}</h2>
           </div>
         ))}
       </div>

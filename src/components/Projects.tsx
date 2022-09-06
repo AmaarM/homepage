@@ -91,8 +91,7 @@ export const ProjectSection = (props: projectData) => {
     Java: DiJava,
   };
 
-  let usedStack: Function[];
-  usedStack = [];
+  const usedStack = [];
   for (let i = 0; i < techStack.length; i++) {
     const component =
       techStack[i] != undefined
@@ -106,7 +105,7 @@ export const ProjectSection = (props: projectData) => {
       <div className="flex flex-row justify-between">
         <h1 className="text-xl">{props.title}</h1>
         <div className="flex flex-row justify-evenly w-[100px]">
-          {usedStack.map((Key, idx) => {
+          {usedStack.map((Key:Function, idx) => {
             return <Key key={idx} />;
           })}
         </div>

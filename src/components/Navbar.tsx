@@ -13,7 +13,7 @@ const Navbar = () => {
   }, []);
 
   const handleCollapse = () => {
-    const newCollapse: boolean = !showCollapse;
+    const newCollapse = !showCollapse;
     setShowCollapse(newCollapse);
   };
 
