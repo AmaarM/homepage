@@ -14,13 +14,13 @@ const About = () => {
         height={"200px"}
         className="rounded-full"
       />
-      <p className="text-center text-xl my-10 max-w-md leading-relaxed">
+      <p className="text-center text-xl my-10 leading-relaxed max-w-[300px]">
         Hello, My name is Amaar Mohamed and I&#39;m an aspiring Software
         Engineer. I&#39;m currently studying Computer Science at the University
         of Minnesota
       </p>
-      <h1 className="text-5xl my-10 items-center">Course Work</h1>
-      <div className="text-skin-base flex flex-row justify-between">
+      <h1 className="md:text-5xl text-3xl my-10 items-center">Course Work</h1>
+      <div className="text-skin-base flex flex-row justify-between md:max-w-[350px] max-w-[300px]">
         <div>
           <ul className="list-disc">
             <li className="list-item">Computational Thinking</li>

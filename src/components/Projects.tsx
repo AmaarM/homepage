@@ -24,8 +24,10 @@ type projectData = {
 
 const Projects = () => {
   return (
-    <div id="projects" className="text-skin-base mx-auto">
-      <h1 className="text-skin-base text-4xl text-center mt-10">Projects</h1>
+    <div id="projects" className="text-skin-base">
+      <h1 className="text-skin-base text-2xl md:text-4xl text-center">
+        Projects
+      </h1>
       <div className="flex flex-row flex-wrap justify-evenly">
         <ProjectSection
           imageUrl={FloraFaunaPic}
@@ -44,7 +46,7 @@ const Projects = () => {
           desc={"Website that allows users to track habits and calories"}
         />
         <ProjectSection
-          title={"Flixter"}
+          title={"Flixster"}
           techStack={["Javascript", "Html", "CSS"]}
           link={"https://amaarm.github.io/flixster_starter/"}
           desc={"Website to see the the now playing or trending movies"}
@@ -72,7 +74,10 @@ export const ProjectSection = (props: projectData) => {
   let testStack: Function[];
   testStack = [];
   for (let i = 0; i < techStack.length; i++) {
-    const component = techStack[i] != undefined ? possibleTechs[techStack[i] as keyof typeof possibleTechs] : () => {};
+    const component =
+      techStack[i] != undefined
+        ? possibleTechs[techStack[i] as keyof typeof possibleTechs]
+        : () => {};
     testStack.push(component);
   }
 

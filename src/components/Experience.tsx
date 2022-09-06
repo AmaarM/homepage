@@ -15,7 +15,9 @@ type workSection = {
 const Experience = () => {
   return (
     <div id="experience" className="flex flex-col justify-center items-center">
-      <h1 className="text-4xl text-skin-base text-center">Work Experience</h1>
+      <h1 className="text-4xl text-skin-base text-center my-10">
+        Work Experience
+      </h1>
       <div className="flex flex-row flex-wrap justify-evenly w-screen">
         <WorkSection
           company={"Target"}
@@ -66,7 +68,10 @@ const WorkSection = ({
         <h1 className="text-2xl max-w-[450px] my-1">{company}</h1>
         <h1 className="text-2xl max-w-[450px] my-1">{title}</h1>
         <h1 className="text-xl my-1">{timeFrame}</h1>
-        <h1 className="text-sm text-center my-5 cursor-pointer hover:text-skin-gray" onClick={handleOnClick}>
+        <h1
+          className="text-sm text-center my-5 cursor-pointer hover:text-skin-gray"
+          onClick={handleOnClick}
+        >
           More Info
         </h1>
       </div>
