@@ -95,10 +95,10 @@ const Stars = (props: any) => {
   );
 
   useFrame((state, delta) => {
-    // if (ref != undefined) {
-    //   ref.current.rotation.x -= delta / 10;
-    //   ref.current.rotation.y -= delta / 15;
-    // }
+    if (ref != undefined) {
+      ref.current.rotation.x -= delta / 10;
+      ref.current.rotation.y -= delta / 15;
+    }
   });
 
   return (
