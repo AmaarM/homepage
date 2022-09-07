@@ -89,17 +89,17 @@ export function inSphere(
 }
 
 const Stars = (props: any) => {
-  const ref = useRef(null);
+  const ref = useRef();
   const [sphere] = useState(() =>
     inSphere(new Float32Array(5000), { radius: 1.5 })
   );
 
-  if (ref != null) {
-    useFrame((state, delta) => {
+  useFrame((state, delta) => {
+    if (ref != undefined) {
       ref.current.rotation.x -= delta / 10;
       ref.current.rotation.y -= delta / 15;
-    });
-  }
+    }
+  });
 
   return (
     <group rotation={[0, 0, Math.PI / 4]}>
