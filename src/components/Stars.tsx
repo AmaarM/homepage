@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { Points, PointMaterial } from "@react-three/drei";
 import { TypedArray } from "../components/ctypes";
-import { Mesh } from "three"
+import { Mesh } from "three";
 
 // Credits @pmndrs/maath https://github.com/pmndrs/maath
 type Sphere = {
@@ -94,9 +94,8 @@ const Stars = (props: any) => {
   const [sphere] = useState(() =>
     inSphere(new Float32Array(5000), { radius: 1.5 })
   );
-
   useFrame((state, delta) => {
-    if (ref != undefined) {
+    if (ref.current != undefined) {
       ref.current.rotation.x -= delta / 10;
       ref.current.rotation.y -= delta / 15;
     }
