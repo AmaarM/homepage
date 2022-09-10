@@ -8,7 +8,7 @@ const Navbar = () => {
 
   useEffect(() => {
     addEventListener("scroll", () => {
-      setShowNav(window.scrollY > 500 ? true : false);
+      setShowNav(window.scrollY > 400 ? true : false);
     });
   }, []);
 
@@ -63,6 +63,7 @@ const Navbar = () => {
           </h4>
         </Link>
       </div>
+
       <div
         className={
           !showNav
