@@ -112,7 +112,7 @@ export const ProjectSection = (props: projectData) => {
         </div>
       </div>
       <Image
-        src={props.imageUrl.src}
+        src={imageUrl.src}
         width={400}
         height={200}
         alt="lifetracker landing page"
