@@ -2,7 +2,6 @@ import { useState, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { Points, PointMaterial } from "@react-three/drei";
 import { TypedArray } from "../components/ctypes";
-import { Mesh } from "three"
 
 // Credits @pmndrs/maath https://github.com/pmndrs/maath
 type Sphere = {
@@ -90,7 +89,7 @@ export function inSphere(
 }
 
 const Stars = (props: any) => {
-  const ref = useRef<Mesh>(null!);
+  const ref = useRef();
   const [sphere] = useState(() =>
     inSphere(new Float32Array(5000), { radius: 1.5 })
   );
