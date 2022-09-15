@@ -1,16 +1,18 @@
 import Link from "next/link";
+import { useState } from "react";
 import { FaLinkedin } from "react-icons/fa";
 import { DiGithubBadge } from "react-icons/di";
 import { AiOutlineMail } from "react-icons/ai";
 
-let copied = false;
-const copyToClipboard = () => {
-  copied = true;
-  navigator.clipboard.writeText("amaarmo123@gmail.com");
-  setTimeout(() => (copied = false), 10000);
-};
-
 const Hero = () => {
+  const [copied, setCopied] = useState(false);
+
+  const copyToClipboard = () => {
+    setCopied(true);
+    navigator.clipboard.writeText("amaarmo123@gmail.com");
+    setTimeout(() => setCopied(false), 8000);
+  };
+
   return (
     <div className="fade-in animation-delay-1 text-skin-base my-7 mx-auto w-screen flex flex-row justify-evenly text-center z-0 h-[900px]">
       <div>
@@ -19,7 +21,7 @@ const Hero = () => {
           Aspiring Software Engineer
         </h1>
         <div className="flex flex-row justify-evenly">
-          <div className="w-4 my-2 cursor-pointer">
+          <div className="w-4 my-2 kursor-pointer">
             <Link href="https://www.linkedin.com/in/amaarmohamed/">
               <FaLinkedin />
             </Link>
@@ -31,14 +33,16 @@ const Hero = () => {
           </div>
           <div className="w-4 my-2 cursor-pointer">
             <AiOutlineMail onClick={copyToClipboard} />
+            {copied ? (
+              <div className="w-[70px] text-center">
+                <h1 className="fade-in animation-delay-1 text-sm text-skin-base bg-gray-900 rounded-lg my-2">
+                  Copied to Clipboard
+                </h1>
+              </div>
+            ) : (
+              <div className="w-[70px] text-center fade-out"></div>
+            )}
           </div>
-          {copied ? (
-            <div className="w-[20px]">
-              <h1 className="text-sm text-black">Copied to Clipboard</h1>
-            </div>
-          ) : (
-            ""
-          )}
         </div>
       </div>
     </div>
