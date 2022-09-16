@@ -23,14 +23,14 @@ const Navbar = () => {
         className={
           showNav
             ? "hidden"
-            : "fade-in animation-delay-2 absolute left-0 top-0 cursor-pointer z-0"
+            : "fade-in animation-delay-2 absolute left-0 top-0 cursor-pointer z-0 py-10 px-10"
         }
       ></div>
       <Link href="#top">
         <FcCollapse
           className={
             showNav
-              ? "fade-in animation-delay-4 md:top-10 left-2 top-3 absolute text-xl cursor-pointer"
+              ? "fade-in animation-delay-4 md:top-10 left-2 top-2 absolute text-xl cursor-pointer bg-gray-900"
               : "hidden"
           }
         />
