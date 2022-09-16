@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "../Navbar";
-import Footer from "../Footer";
 import Head from "next/head";
 import Stars from "../Stars";
 import { Canvas } from "@react-three/fiber";
@@ -27,7 +26,6 @@ const Main: React.FC<children> = ({ children }) => {
       <main className="h-full mx-auto flex flex-col md:w-screen space-y-[475px]">
         {children}
       </main>
-      <Footer notSticky={false} />
     </>
   );
 };
