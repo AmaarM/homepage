@@ -26,15 +26,6 @@ const Navbar = () => {
             : "fade-in animation-delay-2 absolute left-0 top-0 cursor-pointer z-0 py-10 px-10"
         }
       ></div>
-      <Link href="#top">
-        <FcCollapse
-          className={
-            showNav
-              ? "fade-in animation-delay-4 md:top-10 left-2 top-2 absolute text-xl cursor-pointer bg-gray-900"
-              : "hidden"
-          }
-        />
-      </Link>
       <div
         className={
           showNav
@@ -42,28 +33,8 @@ const Navbar = () => {
             : "flex-row my-5 justify-between space-x-7 hidden md:flex"
         }
       >
-        <Link href="#about">
-          <h4 className="text-skin-base cursor-pointer hover:opacity-80 text-xl">
-            About
-          </h4>
-        </Link>
-        <Link href="#projects">
-          <h4 className="text-skin-base cursor-pointer hover:opacity-80 text-xl">
-            Projects
-          </h4>
-        </Link>
-        <Link href="#experience">
-          <h4 className="text-skin-base cursor-pointer hover:opacity-80 text-xl">
-            Experience
-          </h4>
-        </Link>
-        <Link href="#contact">
-          <h4 className="text-skin-base cursor-pointer hover:opacity-80 text-xl">
-            Contact
-          </h4>
-        </Link>
+        <NavLinks />
       </div>
-
       <div
         className={
           !showNav
@@ -71,26 +42,7 @@ const Navbar = () => {
             : "hidden"
         }
       >
-        <Link href="#about">
-          <h4 className="text-skin-base cursor-pointer hover:opacity-80 text-xl">
-            About
-          </h4>
-        </Link>
-        <Link href="#projects">
-          <h4 className="text-skin-base cursor-pointer hover:opacity-80 text-xl">
-            Projects
-          </h4>
-        </Link>
-        <Link href="#experience">
-          <h4 className="text-skin-base cursor-pointer hover:opacity-80 text-xl">
-            Experience
-          </h4>
-        </Link>
-        <Link href="#contact">
-          <h4 className="text-skin-base cursor-pointer hover:opacity-80 text-xl">
-            Contact
-          </h4>
-        </Link>
+        <NavLinks />
       </div>
       <div className={showNav ? "animation-delay-4 fade-in" : "hidden"}>
         <div
@@ -118,30 +70,53 @@ const Navbar = () => {
             </button>
           </div>
           <div className={showCollapse ? "flex flex-col" : "hidden"}>
-            <Link href="#about">
-              <h4 className="text-skin-base cursor-pointer hover:opacity-80 text-xl">
-                About
-              </h4>
-            </Link>
-            <Link href="#projects">
-              <h4 className="text-skin-base cursor-pointer hover:opacity-80 text-xl">
-                Projects
-              </h4>
-            </Link>
-            <Link href="#experience">
-              <h4 className="text-skin-base cursor-pointer hover:opacity-80 text-xl">
-                Experience
-              </h4>
-            </Link>
-            <Link href="#contact">
-              <h4 className="text-skin-base cursor-pointer hover:opacity-80 text-xl">
-                Contact
-              </h4>
-            </Link>
+            <NavLinks />
           </div>
         </div>
       </div>
     </nav>
+  );
+};
+
+export const NavLinks = () => {
+  const [showScroll, setScroll] = useState(false);
+
+  useEffect(() => {
+    addEventListener("scroll", () => {
+      setScroll(window.scrollY > 400 ? true : false);
+    });
+  }, []);
+
+  return (
+    <>
+      {showScroll ? (
+        <Link href="#home">
+          <FcCollapse className={"cursor-pointer"} />
+        </Link>
+      ) : (
+        ""
+      )}
+      <Link href="#about">
+        <h4 className="text-skin-base cursor-pointer hover:opacity-80 text-xl">
+          About
+        </h4>
+      </Link>
+      <Link href="#projects">
+        <h4 className="text-skin-base cursor-pointer hover:opacity-80 text-xl">
+          Projects
+        </h4>
+      </Link>
+      <Link href="#experience">
+        <h4 className="text-skin-base cursor-pointer hover:opacity-80 text-xl">
+          Experience
+        </h4>
+      </Link>
+      <Link href="#contact">
+        <h4 className="text-skin-base cursor-pointer hover:opacity-80 text-xl">
+          Contact
+        </h4>
+      </Link>
+    </>
   );
 };
 
