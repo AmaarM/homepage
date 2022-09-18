@@ -21,7 +21,7 @@ const Hero = () => {
           Aspiring Software Engineer
         </h1>
         <div className="flex flex-row justify-evenly">
-          <div className="w-4 my-2 kursor-pointer">
+          <div className="w-4 my-2 cursor-pointer">
             <Link href="https://www.linkedin.com/in/amaarmohamed/">
               <FaLinkedin />
             </Link>
