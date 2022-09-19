@@ -27,6 +27,7 @@ const Experience = () => {
           title={"Guest Advocate"}
           desc={[
             "- Assisted Guests with any questions they may have, and resolved issues",
+            "- Worked with leaders to complete task's and improve guest experience",
           ]}
           timeFrame={"11-2018 -> 06-2022"}
           image={TargetLogo}

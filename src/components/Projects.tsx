@@ -12,14 +12,17 @@ import {
   DiHtml5,
   DiCss3,
   DiJava,
+  DiGit,
 } from "react-icons/di";
 import { SiExpress } from "react-icons/si";
+import { CgWebsite } from "react-icons/cg";
 import { useState } from "react";
 
 type projectData = {
   title: string;
   techStack: Array<string>;
-  link: string;
+  url_link: string;
+  git_link: string;
   desc: string;
   imageUrl: StaticImageData;
   features: Array<string>;
@@ -37,7 +40,8 @@ const Projects = () => {
           title={"Flora&Fauna"}
           techStack={["React", "Node", "SQL", "Express"]}
           desc={"Website that allows users to search for local flora and fauna"}
-          link={"https://flora-fauna.surge.sh/"}
+          url_link={"https://flora-fauna.surge.sh/"}
+          git_link={"https://github.com/Planimal-Info/Flora-Fauna"}
           features={[
             "- User Authentication, log in and sign up",
             "- Search the database for local flora and fauna",
@@ -52,7 +56,8 @@ const Projects = () => {
           imageUrl={LifeTrackerPic}
           title={"Life Tracker"}
           techStack={["React", "Node", "SQL", "Express"]}
-          link={"https://lifetracker-amaar.surge.sh/"}
+          url_link={"https://lifetracker-amaar.surge.sh/"}
+          git_link={"https://github.com/AmaarM/tdd-lifetracker-starter"}
           desc={"Website that allows users to track exercises and calories"}
           features={[
             "- Log in and sign up",
@@ -63,7 +68,8 @@ const Projects = () => {
         <ProjectSection
           title={"Flixster"}
           techStack={["Javascript", "Html", "CSS"]}
-          link={"https://amaarm.github.io/flixster_starter/"}
+          url_link={"https://amaarm.github.io/flixster_starter/"}
+          git_link={"https://github.com/AmaarM/flixster_starter"}
           desc={"Website to see the the now playing or trending movies"}
           imageUrl={FlixsterPic}
           features={[
@@ -78,7 +84,7 @@ const Projects = () => {
 };
 
 export const ProjectSection = (props: projectData) => {
-  const { techStack, imageUrl, desc, link, features } = props;
+  const { techStack, imageUrl, desc, url_link, git_link, features } = props;
   const [moreInfo, setMoreInfo] = useState(false);
 
   const possibleTechs: object = {
@@ -118,11 +124,21 @@ export const ProjectSection = (props: projectData) => {
         alt="lifetracker landing page"
         className="rounded-xl"
       ></Image>
-      <Link href={link}>
-        <h1 className="cursor-pointer hover:underline mt-3 text-center">
-          Link
-        </h1>
-      </Link>
+      <div className="my-1">
+        <div className="flex flex-row justify-center space-x-5 ">
+          <Link href={url_link}>
+            <a target="_blank">
+              <CgWebsite className="cursor-pointer" />
+            </a>
+          </Link>
+          <Link href={git_link}>
+            <a target="_blank">
+              <DiGit className="cursor-pointer" />
+            </a>
+          </Link>
+        </div>
+      </div>
+
       <p className="text-center">{desc}</p>
       <div className="flex justify-center my-5 align-center">
         <button

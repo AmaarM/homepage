@@ -1,6 +1,7 @@
 import { useState, MouseEventHandler } from "react";
 import Footer from "../components/Footer";
 import axios from "axios";
+import { env } from "../env/client.mjs";
 
 const Contact = () => {
   const [email, setEmail] = useState("");
@@ -12,10 +13,7 @@ const Contact = () => {
     const jsonData = JSON.stringify(data);
 
     await axios
-      .post(
-        "https://public.herotofu.com/v1/c89c7a60-2d5d-11ed-9d7d-1fea1503699b",
-        jsonData
-      )
+      .post(`${env.NEXT_PUBLIC_KEY}`, jsonData)
       .then(() => {
         setSent(true);
       })
