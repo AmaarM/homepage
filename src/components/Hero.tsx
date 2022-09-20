@@ -23,12 +23,16 @@ const Hero = () => {
         <div className="flex flex-row justify-evenly">
           <div className="w-4 my-2 cursor-pointer">
             <Link href="https://www.linkedin.com/in/amaarmohamed/">
-              <FaLinkedin />
+              <a target="_blank">
+                <FaLinkedin />
+              </a>
             </Link>
           </div>
           <div className="w-4 my-2 cursor-pointer">
             <Link href="https://github.com/AmaarM">
-              <DiGithubBadge />
+              <a target="_blank">
+                <DiGithubBadge />
+              </a>
             </Link>
           </div>
           <div className="w-4 my-2 cursor-pointer">

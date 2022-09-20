@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { DiGithubBadge } from "react-icons/di";
 import { FcCollapse } from "react-icons/fc";
 
 const Navbar = () => {
@@ -97,25 +98,37 @@ export const NavLinks = () => {
         ""
       )}
       <Link href="#about">
-        <h4 className="text-skin-base cursor-pointer hover:opacity-80 text-xl">
+        <h4 className="text-skin-base cursor-pointer hover:opacity-80 text-lg">
           About
         </h4>
       </Link>
       <Link href="#projects">
-        <h4 className="text-skin-base cursor-pointer hover:opacity-80 text-xl">
+        <h4 className="text-skin-base cursor-pointer hover:opacity-80 text-lg">
           Projects
         </h4>
       </Link>
       <Link href="#experience">
-        <h4 className="text-skin-base cursor-pointer hover:opacity-80 text-xl">
+        <h4 className="text-skin-base cursor-pointer hover:opacity-80 text-lg">
           Experience
         </h4>
       </Link>
       <Link href="#contact">
-        <h4 className="text-skin-base cursor-pointer hover:opacity-80 text-xl">
+        <h4 className="text-skin-base cursor-pointer hover:opacity-80 text-lg">
           Contact
         </h4>
       </Link>
+      {!showScroll ? (
+        <Link href="https://github.com/AmaarM/homepage">
+          <a target="_blank">
+            <div className="text-skin-base cursor-pointer hover:opacity-80 text-lg flex flex-row justify-center align-middle">
+              Source
+              <DiGithubBadge />
+            </div>
+          </a>
+        </Link>
+      ) : (
+        ""
+      )}
     </>
   );
 };
