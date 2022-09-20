@@ -7,9 +7,26 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [sent, setSent] = useState(false);
+  const [error, setError] = useState(false);
 
+  const validateEmail = (email: string) => {
+    return String(email)
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+  };
+
+  //Submit Function that sends contact details
   const handleOnSubmit: MouseEventHandler<HTMLButtonElement> = async () => {
+    if (validateEmail(email) == null) {
+      setError(true);
+      return setTimeout(() => {
+        setError(false);
+      }, 5000);
+    }
     const data = { user: email, name: name };
+
     const jsonData = JSON.stringify(data);
 
     await axios
@@ -62,6 +79,17 @@ const Contact = () => {
         <h3 className={sent ? "text-skin-base text-center my-10" : "hidden"}>
           Thank you for reaching out, I will respond to your request soon.
         </h3>
+        {
+          <h3
+            className={
+              error
+                ? "fade-in animation-delay-1 text-red-700 text-center my-5"
+                : "hidden"
+            }
+          >
+            Invalid Email, Input a valid one
+          </h3>
+        }
       </div>
       <div className="bottom-0 absolute">
         <Footer notSticky={true} />
