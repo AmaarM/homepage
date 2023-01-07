@@ -63,7 +63,7 @@ const WorkSection = ({
 
   return (
     <div>
-      <div className="text-skin-base w-[500px] my-10 flex flex-row justify-center">
+      <div className="text-skin-base w-[500px] my-5 flex flex-row justify-center">
         <div>
           <Image
             src={image}
@@ -76,7 +76,7 @@ const WorkSection = ({
           <h1 className="text-2xl max-w-[450px] my-1">{title}</h1>
           <h1 className="text-xl my-1">{timeFrame}</h1>
           <h1
-            className="text-sm text-center my-5 cursor-pointer hover:text-skin-gray"
+            className="text-sm text-center my-5 cursor-pointer hover:text-skin-gray transition-all ease-in-out"
             onClick={handleOnClick}
           >
             More Info
@@ -86,7 +86,7 @@ const WorkSection = ({
       <div
         className={
           moreInfo
-            ? "flex justify-center text-skin-base flex-col mx-auto md:w-[500px] w-[200px] items-center text-center"
+            ? "flex justify-center text-skin-base flex-col mx-auto md:w-[500px] w-[200px] text-center"
             : "hidden"
         }
       >

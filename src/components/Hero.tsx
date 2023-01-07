@@ -10,9 +10,9 @@ const Hero = () => {
   const copyToClipboard = () => {
     setCopied(true);
     navigator.clipboard.writeText("amaarmo123@gmail.com");
-    setTimeout(() => setCopied(false), 8000);
+    setTimeout(() => setCopied(false), 2000);
   };
-
+  console.log(copied);
   return (
     <div className="fade-in animation-delay-1 text-skin-base my-7 mx-auto w-screen flex flex-row justify-evenly text-center z-0 h-[900px]">
       <div>
@@ -39,7 +39,7 @@ const Hero = () => {
             <AiOutlineMail onClick={copyToClipboard} />
             {copied ? (
               <div className="w-[70px] text-center">
-                <h1 className="fade-in animation-delay-1 text-sm text-skin-base bg-gray-900 rounded-lg my-2">
+                <h1 className="fade-in-out text-sm text-skin-base bg-gray-900 rounded-lg my-2">
                   Copied to Clipboard
                 </h1>
               </div>

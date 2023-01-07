@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div
       id="about"
-      className="text-skin-base md:w-screen flex flex-col justify-evenly my-10 ease-in duration-300 items-center w-[200px] mx-auto"
+      className="text-skin-base md:w-screen flex flex-col justify-evenly my-10 ease-in duration-300 items-center w-[400px] mx-auto"
     >
       <Image
         src={ProfilePic}
@@ -20,18 +20,34 @@ const About = () => {
         of Minnesota
       </p>
       <h1 className="md:text-5xl text-3xl my-10 items-center">Course Work</h1>
-      <div className="text-skin-base flex flex-row justify-between md:max-w-[350px] max-w-[300px]">
+      <div className="text-skin-base flex flex-row justify-between md:max-w-[700px]">
         <div>
           <ul className="list-disc">
-            <li className="list-item">Computational Thinking</li>
-            <li className="list-item">Programming with Objects</li>
+            <li className="list-item">
+              Computational Thinking{" "}
+              <span className="text-blue-400">in Python</span>
+            </li>
+            <li className="list-item">
+              Programming with Objects{" "}
+              <span className="text-red-400">in Java</span>
+            </li>
             <li className="list-item">Discrete Mathmatics</li>
-            <li className="list-item">Computer Organization/Architecture</li>
-            <li className="list-item">Introduction to Data Structures</li>
+            <li className="list-item">
+              Computer Architecture{" "}
+              <span className="text-green-400">in Java</span>
+            </li>
+            <li className="list-item">
+              Introduction to Data Structures{" "}
+              <span className="text-green-400">in Java</span>
+            </li>
           </ul>
         </div>
         <div>
-          <p>More to come...</p>
+          <li className="list-item">
+            Advanced Programming Principles{" "}
+            <span className="text-orange-400">in OCaml</span>
+          </li>
+          <p className="text-center">More to come...</p>
         </div>
       </div>
     </div>
