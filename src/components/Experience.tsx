@@ -51,7 +51,7 @@ const Experience = () => {
 const WorkSection = ({
   title,
   desc,
-  timeFrame,
+    timeFrame,
   image,
   company,
 }: workSection) => {
@@ -91,7 +91,7 @@ const WorkSection = ({
         }
       >
         {desc.map((e, idx) => (
-          <div key={idx}>
+          <div key={idx} className={moreInfo ? "fade-in" : "fade-in-out"}>
             <h2>{e}</h2>
           </div>
         ))}

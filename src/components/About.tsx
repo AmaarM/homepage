@@ -29,12 +29,12 @@ const About = () => {
             </li>
             <li className="list-item">
               Programming with Objects{" "}
-              <span className="text-red-400">in Java</span>
+              <span className="text-green-400">in Java</span>
             </li>
             <li className="list-item">Discrete Mathmatics</li>
             <li className="list-item">
               Computer Architecture{" "}
-              <span className="text-green-400">in Java</span>
+              <span className="text-red-400">in C/Assembly</span>
             </li>
             <li className="list-item">
               Introduction to Data Structures{" "}
