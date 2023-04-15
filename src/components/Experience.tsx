@@ -15,13 +15,12 @@ type workSection = {
 const Experience = () => {
   return (
     <div
-      id="experience"
       className="flex flex-col justify-center items-center md:w-screen"
     >
-      <h1 className="text-4xl text-skin-base text-center my-10">
+      <h1 className="text-4xl text-center my-10">
         Work Experience
       </h1>
-      <div className="flex flex-row flex-wrap justify-evenly w-screen">
+      <div id="experience" className="flex flex-row flex-wrap justify-evenly w-screen">
         <WorkSection
           company={"Target"}
           title={"Guest Advocate"}
@@ -51,7 +50,7 @@ const Experience = () => {
 const WorkSection = ({
   title,
   desc,
-    timeFrame,
+  timeFrame,
   image,
   company,
 }: workSection) => {
@@ -62,8 +61,8 @@ const WorkSection = ({
   };
 
   return (
-    <div>
-      <div className="text-skin-base w-[500px] my-5 flex flex-row justify-center">
+    <div className="text-skin-base ">
+      <div className="w-[500px] my-5 flex flex-row justify-center">
         <div>
           <Image
             src={image}
@@ -75,23 +74,28 @@ const WorkSection = ({
           <h1 className="text-2xl max-w-[450px] my-1">{company}</h1>
           <h1 className="text-2xl max-w-[450px] my-1">{title}</h1>
           <h1 className="text-xl my-1">{timeFrame}</h1>
-          <h1
-            className="text-sm text-center my-5 cursor-pointer hover:text-skin-gray transition-all ease-in-out"
-            onClick={handleOnClick}
-          >
-            More Info
-          </h1>
         </div>
+      </div>
+      <div className="flex justify-center my-5">
+        <button
+          className="text-sm text-center cursor-pointer hover:text-skin-gray transition-all ease-in-out"
+          onClick={handleOnClick}
+        >
+          More Info
+        </button>
       </div>
       <div
         className={
           moreInfo
-            ? "flex justify-center text-skin-base flex-col mx-auto md:w-[500px] w-[200px] text-center"
+            ? "flex flex-col"
             : "hidden"
         }
       >
+      </div>
+      <div className="flex justify-center flex-col mx-auto md:w-[500px] w-[300px] text-center">
+
         {desc.map((e, idx) => (
-          <div key={idx} className={moreInfo ? "fade-in" : "fade-in-out"}>
+          <div key={idx} className={moreInfo ? "fade-in" : "fade-out"}>
             <h2>{e}</h2>
           </div>
         ))}

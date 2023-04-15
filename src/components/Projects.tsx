@@ -103,7 +103,7 @@ export const ProjectSection = (props: projectData) => {
     const component =
       techStack[i] != undefined
         ? possibleTechs[techStack[i] as keyof typeof possibleTechs]
-        : () => {};
+        : () => { };
     usedStack.push(component);
   }
 
@@ -148,7 +148,7 @@ export const ProjectSection = (props: projectData) => {
           More Info
         </button>
       </div>
-      <div className={moreInfo ? "flex justify-center flex-col" : "hidden"}>
+      <div className={moreInfo ? "flex justify-center flex-col fade-in" : "fade-out"}>
         {features.map((e, idx) => (
           <div key={idx}>{e}</div>
         ))}

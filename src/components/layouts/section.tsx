@@ -6,7 +6,7 @@ type children = {
 
 const Section: React.FC<children> = ({ children }) => {
   return (
-    <div className="h-[1000px] w-screen bg-black relative z-50">
+    <div className="h-[1500px] w-screen bg-black relative z-50">
       <>{children}</>
     </div>
   );

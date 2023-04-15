@@ -22,7 +22,7 @@ html {
 }
 
 .fade-out {
-  animation: fade-out 10s;
+  animation: fade-out 1s;
   opacity: 0;
 }
 
