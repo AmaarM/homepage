@@ -17,16 +17,7 @@ import {
 import { SiExpress } from "react-icons/si";
 import { CgWebsite } from "react-icons/cg";
 import { useState } from "react";
-
-type projectData = {
-  title: string;
-  techStack: Array<string>;
-  url_link: string;
-  git_link: string;
-  desc: string;
-  imageUrl: StaticImageData;
-  features: Array<string>;
-};
+import { projectData } from "../components/types/index";
 
 const Projects = () => {
   return (
@@ -148,7 +139,11 @@ export const ProjectSection = (props: projectData) => {
           More Info
         </button>
       </div>
-      <div className={moreInfo ? "flex justify-center flex-col" : "hidden"}>
+      <div
+        className={
+          moreInfo ? "flex justify-center flex-col fade-in" : "fade-out"
+        }
+      >
         {features.map((e, idx) => (
           <div key={idx}>{e}</div>
         ))}

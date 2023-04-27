@@ -22,8 +22,13 @@ html {
 }
 
 .fade-out {
-  animation: fade-out 10s;
+  animation: fade-out 1s;
   opacity: 0;
+}
+
+.fade-in-out {
+  opacity: 1;
+  animation: fade-in-out 2s linear;
 }
 
 @keyframes fadeIn {
@@ -41,6 +46,16 @@ html {
   }
   to {
     opacity: 0;
+  }
+}
+
+@keyframes fade-in-out {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
   }
 }
 
