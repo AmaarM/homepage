@@ -25,28 +25,33 @@ const About = () => {
           <ul className="list-disc">
             <li className="list-item">
               Computational Thinking{" "}
-              <span className="text-blue-400">in Python</span>
+              <span className="text-sky-900">in Python</span>
             </li>
             <li className="list-item">
               Programming with Objects{" "}
-              <span className="text-green-400">in Java</span>
+              <span className="text-green-900">in Java</span>
             </li>
             <li className="list-item">Discrete Mathmatics</li>
             <li className="list-item">
               Computer Architecture{" "}
-              <span className="text-red-400">in C/Assembly</span>
+              <span className="text-red-900">in C/Assembly</span>
             </li>
             <li className="list-item">
               Introduction to Data Structures{" "}
-              <span className="text-green-400">in Java</span>
+              <span className="text-green-900">in Java</span>
             </li>
           </ul>
         </div>
         <div>
           <li className="list-item">
             Advanced Programming Principles{" "}
-            <span className="text-orange-400">in OCaml</span>
+            <span className="text-orange-900">in OCaml</span>
           </li>
+          <li className="list-item">
+            Data Structures and Algorithms
+            <span className="text-sky-900"> in Python</span>
+          </li>
+
           <p className="text-center">More to come...</p>
         </div>
       </div>

@@ -12,7 +12,6 @@ const Hero = () => {
     navigator.clipboard.writeText("amaarmo123@gmail.com");
     setTimeout(() => setCopied(false), 2000);
   };
-  console.log(copied);
   return (
     <div className="fade-in animation-delay-1 text-skin-base my-7 mx-auto w-screen flex flex-row justify-evenly text-center z-0 h-[900px]">
       <div>
@@ -44,7 +43,7 @@ const Hero = () => {
                 </h1>
               </div>
             ) : (
-              <div className="w-[70px] text-center fade-out"></div>
+              ""
             )}
           </div>
         </div>

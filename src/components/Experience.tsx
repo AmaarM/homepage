@@ -2,25 +2,18 @@ import Image from "next/image";
 import { StaticImageData } from "next/image";
 import TargetLogo from "../assets/target-logo.jpg";
 import CodepathLogo from "../assets/codepath-logo.jpg";
+import UMNLogo from "../assets/umnlogo.png";
 import { useState } from "react";
-
-type workSection = {
-  company: string;
-  title: string;
-  desc: Array<string>;
-  timeFrame: string;
-  image: StaticImageData;
-};
+import { workSection } from "../components/types/index"
 
 const Experience = () => {
   return (
-    <div
-      className="flex flex-col justify-center items-center md:w-screen"
-    >
-      <h1 className="text-4xl text-center my-10">
-        Work Experience
-      </h1>
-      <div id="experience" className="flex flex-row flex-wrap justify-evenly w-screen">
+    <div className="flex flex-col justify-center items-center md:w-screen">
+      <h1 className="text-4xl text-center my-10">Work Experience</h1>
+      <div
+        id="experience"
+        className="flex flex-row flex-wrap justify-evenly w-screen"
+      >
         <WorkSection
           company={"Target"}
           title={"Guest Advocate"}
@@ -41,6 +34,17 @@ const Experience = () => {
           ]}
           timeFrame={"06-2022 -> 08-2022"}
           image={CodepathLogo}
+        />
+        <WorkSection
+          company={"University of Minnesota"}
+          title={"Student Developer"}
+          desc={[
+            `- Help develop and maintain services used on all campuses, like Student Degree Progress`,
+            `- Technologies used include Ruby, Ruby on Rails`,
+            `- Gain soft skills and mentorship from experienced engineers`,
+          ]}
+          timeFrame={"11-2022 -> Present"}
+          image={UMNLogo}
         />
       </div>
     </div>
@@ -84,16 +88,8 @@ const WorkSection = ({
           More Info
         </button>
       </div>
-      <div
-        className={
-          moreInfo
-            ? "flex flex-col"
-            : "hidden"
-        }
-      >
-      </div>
+      <div className={moreInfo ? "flex flex-col" : "hidden"}></div>
       <div className="flex justify-center flex-col mx-auto md:w-[500px] w-[300px] text-center">
-
         {desc.map((e, idx) => (
           <div key={idx} className={moreInfo ? "fade-in" : "fade-out"}>
             <h2>{e}</h2>
