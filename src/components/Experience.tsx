@@ -39,7 +39,7 @@ const Experience = () => {
           company={"University of Minnesota"}
           title={"Student Developer"}
           desc={[
-            `- Help develop and maintain services used on all campuses, like Student Degree Progress`,
+            `- Help develop and maintain services used on all campuses`,
             `- Technologies used include Ruby, Ruby on Rails`,
             `- Gain soft skills and mentorship from experienced engineers`,
           ]}
