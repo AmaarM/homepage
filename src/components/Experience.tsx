@@ -1,10 +1,10 @@
 import Image from "next/image";
-import { StaticImageData } from "next/image";
 import TargetLogo from "../assets/target-logo.jpg";
 import CodepathLogo from "../assets/codepath-logo.jpg";
 import UMNLogo from "../assets/umnlogo.png";
+import AdobeLogo from "../assets/AdobeLogo.png";
 import { useState } from "react";
-import { workSection } from "../components/types/index"
+import { workSection } from "../components/types/index";
 
 const Experience = () => {
   return (
@@ -21,7 +21,7 @@ const Experience = () => {
             "- Assisted Guests with any questions they may have, and resolved issues",
             "- Worked with leaders to complete task's and improve guest experience",
           ]}
-          timeFrame={"11-2018 -> 06-2022"}
+          timeFrame={"11/2018 - 06/2022"}
           image={TargetLogo}
         />
         <WorkSection
@@ -32,8 +32,20 @@ const Experience = () => {
             `- Built Responsive Websites using Javascript Technologies like React, Node, Express, SQL and more`,
             `- Gained soft skills and also recieved and learned from industry professionals`,
           ]}
-          timeFrame={"06-2022 -> 08-2022"}
+          timeFrame={"06/2022 - 08/2022"}
           image={CodepathLogo}
+        />
+        <WorkSection
+          company={"Adobe"}
+          title={"Software Engineer Intern"}
+          desc={[
+            `- Developed a new web component for Adobe Creative Cloud applications using React and Typescript`,
+            `- Navigated ambiguous project requirements, delivering an MVP and multiple strech goals`,
+            `- Refactored portions of the codebase to encapsulate buisness logic away from the UI, reducing techincal debt`,
+            `- Created an architecture proposal for the new component, which underwent team review and subsequently gained approval`,
+          ]}
+          timeFrame={"06/2023 - 08/2023"}
+          image={AdobeLogo}
         />
         <WorkSection
           company={"University of Minnesota"}
@@ -43,14 +55,13 @@ const Experience = () => {
             `- Technologies used include Ruby, Ruby on Rails`,
             `- Gain soft skills and mentorship from experienced engineers`,
           ]}
-          timeFrame={"11-2022 -> Present"}
+          timeFrame={`11/2022 - 06/2023, 09/2023 - Present`}
           image={UMNLogo}
         />
       </div>
     </div>
   );
 };
-
 const WorkSection = ({
   title,
   desc,

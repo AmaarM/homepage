@@ -37,7 +37,7 @@ function normalizeSeed(seed: number | string) {
 function lcgRandom(seed: number | string) {
   let state = normalizeSeed(seed);
 
-  return function() {
+  return function () {
     const result = (state * 48271) % 2147483647;
     state = result;
     return result / 2147483647;
@@ -89,22 +89,7 @@ export function inSphere(
 
   return buffer;
 }
-
-const randomColor = (): string | undefined => {
-  const colors = ["#ffffff", "#073642", "#a5b4fc", "#38bdf8", "#fbbf24"];
-  return colors[Math.ceil(Math.random() * colors.length)];
-};
-
 const Stars = (props: any) => {
-  const [color, set_color] = useState("");
-
-  useEffect(() => {
-    const curr_color = randomColor();
-    if (curr_color != undefined) {
-      set_color(curr_color);
-    }
-  }, []);
-
   const ref = useRef<Mesh>(null!);
   const [sphere] = useState(() =>
     inSphere(new Float32Array(5000), { radius: 1.5 })
@@ -127,7 +112,6 @@ const Stars = (props: any) => {
       >
         <PointMaterial
           transparent
-          color={color}
           size={0.003}
           sizeAttenuation={true}
           depthWrite={false}

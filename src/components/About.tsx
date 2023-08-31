@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ProfilePic from "../assets/amaar-pic.jpg";
+import ProfilePic from "../assets/goodphoto.jpg";
 
 const About = () => {
   return (
@@ -10,9 +10,9 @@ const About = () => {
       <Image
         src={ProfilePic}
         alt="Amaar Smiling"
-        width={"200px"}
-        height={"200px"}
-        className="rounded-full"
+        width={"300px"}
+        height={"300px"}
+        className="object-none rounded-full"
       />
       <p className="text-center text-xl my-10 leading-relaxed max-w-[300px]">
         Hello, My name is Amaar Mohamed and I&#39;m an aspiring Software
@@ -51,7 +51,10 @@ const About = () => {
             Data Structures and Algorithms
             <span className="text-sky-900"> in Python</span>
           </li>
-
+          <li className="list-item">
+            Operating Systems
+            <span className="text-red-900"> in C/Assembly</span>
+          </li>
           <p className="text-center">More to come...</p>
         </div>
       </div>
